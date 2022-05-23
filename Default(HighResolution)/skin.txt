@@ -1,0 +1,198 @@
+{	
+				"version":"//This is a type of comment even though it doesn't look like it. This document is a JSON file and JSON does not natively supports comments. The creator of JSON Douglas Crockford wanted a portable language that was easy for many types of machines to read, and sadly that resulted in a language that is harder for people to read. If your text editor supports highlighting go ahead and set it to JSON. You'll see that this coment is technically a value. Every line is either key and value pair separated by a colon or it's a list of values within brackets/braces. The curly brace above this line signals the start of the JSON object. This comment is technically the first key and value pair, but K-Meleon will overwrite this value because the identical key below introduces a new (correct) value for the key. This is very bad practice because some JSON parsers will simply error out if they find 2 identical keys like this. Therefore the value also begins with // like a C comment. This is meaningless to JSON but it will allow you to REMOVE ALL COMMENTS from your source code. If you use a minifier for JSON it may already have the ability to remove C comments. If not, no actual part of the skin contains the double slash so you can automate the process of removing comments by removing every line with 2 slashes. In Notepad++ you can press CTRL + F, select the MARK tab, check BOOKMARK LINE, search for //, click MARK ALL, and go to SEARCH > BOOKMARK > REMOVE BOOKMARKED LINES. If you forget to remove a comment from the source code K-Meleon should still display all of its toolbars but may have graphical glitches in dialogs or menus. To convert this source code document to a config file, just change the extension from .txt to .cfg and K-Meleon will parse it.",
+  "version":1,
+	"width":24,
+	"height":24,
+	"lists": [
+    {
+      "images":[
+        {
+				"width": "//You'll notice that the structure is very tree like. This image reference is nested within IMAGES which is nested within LISTS. Everything in the config file is a key and value pair, so to put more than a single value in for a key it's required to use brackets or curly braces. Each of the values within this particular set of brackets is defining the icons available for the commands that will be listed next. The width and height values have nothing to do with the display size of icons in the browser. The actual size is set in the preferences dialog and even the default size is set by the browser depending on the end user's pixel density. The width and height instead indicate 2 separate things. First, they tell K-Meleon where to slice up mainbar.png or mainbarXX.png to create the various icons. Next, they tell K-Meleon which image to use to if a user is displaying toolbars at a certain height to avoid too much scaling. K-Meleon will slice the image and then use each resulting icon for all the commands listed below moving across the image from left to right and down the commands from top to bottom. The .ico files in a skin contain multiple resolutions and therefore are not included in this config. Likewise, the order of the commands has no impact on layout in the browser. The order of the icons and commands simply pairs a column of icons to a comand. The layout of the icons will be deterimined by toolbars.cfg.",
+           "name": "mainbar16.png",     
+           "width":16,
+           "height":16
+        },        
+		{
+				"width": "//This section will create the icons for the next list of commands if the user is using toolbars between 32-48 pixels tall.",
+		   "name": "mainbar32.png",     
+           "width":32,
+           "height":32
+        },
+		{
+				"width": "//And this section will create icons for toolbars that are 48 pixels tall or more. You'll see this format repeated throughout the theme.",
+		   "name": "mainbar48.png",     
+           "width":48,
+           "height":48
+        },
+        "mainbar.png"
+      ],
+      "commands": [
+        "navBack",
+        "navForward",
+        "navStop",
+        "navReload",
+        ["macros(Home)", "navHome"],
+        "saveAs",
+        "macros(Places_History)",
+        ["bookmarks(Edit)", "favorites(Edit)", "hotlist(Edit)", 
+         "bookmarks(Add)", "bookmarks(AddLink)",
+	 "favorites(Add)", "hotlist(Add)",
+         "favorites(AddLink)", "hotlist(AddLink)",
+         "@&Bookmarks", "@&F&avorites", "@H&otlist"
+        ],
+        "filePrint",
+        "",
+        "tabNew",
+        "editCut",
+        "editPaste",
+        "editCopy"			
+      ] 
+    },
+    {
+      "images": [  
+		{
+				"width": "//This next set of icons covers what you'll normally find in the ZOOM, GO, MAIL/NEWS, and JAVASCRIPT toolbars.",
+           "name": "tools32.png",     
+           "width":32,
+           "height":32
+        },
+		{
+           "name": "tools48.png",     
+           "width":48,
+           "height":48
+        },
+        "tools.png"
+      ],  
+      "commands": [
+        ["@Compact Menu","openPrefs"],
+        "macros(Console2)",
+        "viewSource",
+        "macros(Mail_ReadMail)",
+        "macros(Mail_ReadNews)",
+        "macros(RSS)",
+        ["navSearch","macros(Search)"],
+        ["macros(Zoom_In)", "pageFontIncrease"],
+        ["macros(Zoom_Out)", "pageFontDecrease"],
+        ["macros(Go_Selected)", "navGo"],
+        "macros(Go_Up)"
+      ] 
+    },
+    {
+      "images": [
+        {
+				"width":"//These are the icons for the tab bar. You could choose to all or none of these in toolbars.cfg.",
+          "name": "tabbar16.png",     
+          "width":16,
+          "height":16
+        },        
+		{
+          "name": "tabbar32.png",     
+          "width":32,
+          "height":32
+        },
+		{
+          "name": "tabbar48.png",     
+          "width":48,
+          "height":48
+        },
+        "tabbar.png"        
+      ],
+      "commands": [
+        ["tabPrev", "windowPrev"],
+        ["tabNext", "windowNext"],
+        ["tabNew", "windowNew"],
+        ["tabClose", "windowClose"]			
+      ] 
+    },    
+    
+    {
+      "images": [{
+        "name": "findbar.png",     
+        "width":24,
+        "height":24
+      },
+{
+        "name": "findbar32.png",     
+        "width":32,
+        "height":32
+      },
+{
+        "name": "findbar48.png",     
+        "width":48,
+        "height":48
+      }],  
+      "commands": [
+        "editFindNext",
+        "editFindPrev",
+        "editFindMatchCase",
+        "editFindHighlight"
+      ]
+    },
+    {
+      "images": [{
+			"width":"//These are window controls that can be used when K-Meleon's title bar is disabled. I've left them at their original size. This theme does not include any icons for window controls so this will pull the icons from the DEFAULT theme folder.",
+        "name": "windowControls.png",     
+        "width":16,
+        "height":16
+      }],  
+      "commands": [
+        "windowMinimize",
+        "windowToggle",
+        "windowClose"
+      ]		
+    },
+    {
+      "images": [  
+		{
+           "name": "icons32.png",     
+           "width":32,
+           "height":32
+        },
+		{
+           "name": "icons48.png",     
+           "width":48,
+           "height":48
+        },
+        "icons.png"
+      ],
+      "commands": [
+        "goHome",
+        "saveImageAs",
+        "editFind",
+        "openManageProfiles",
+        "goAboutPlugins",
+        "appExit",
+        "filePrintSetup",
+        "",
+        "",
+        "fileOpen",
+        "goFAQ",
+        "macros(kTabs_ReloadAll)",
+        "goManual",
+        "appAbout",
+        [
+          "privacy(ClearCache)", 
+          "privacy(ClearCookies)",
+          "privacy(ClearHistory)",
+          "privacy(ClearSignon)",
+          "macros(kPrivacy_ClearAll)",          
+          "privacy(ClearMRU)",
+          "macros(JS_killApplets)"
+        ],
+        "macros(JS_killFlash)"
+      ]		
+    },
+    
+    {
+      "images": [{
+        "name": "your_icons.png",     
+        "width":32,
+        "height":32
+      }], 
+      "commands": [
+	  "macros(cfg_SettingsDir)",
+	  "ID_NAV_FORCE_RELOAD",
+      ]
+    }
+  ]
+}
