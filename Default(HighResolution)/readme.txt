@@ -1,8 +1,6 @@
-  _  _ _      _      ___             _      _   _             
- | || (_)__ _| |_   | _ \___ ___ ___| |_  _| |_(_)___ _ _    
- | __ | / _` | ' \  |   / -_|_-</ _ \ | || |  _| / _ \ ' \  
- |_||_|_\__, |_||_| |_|_\___/__/\___/_|\_,_|\__|_\___/_||_|  
-        |___/                                                        
+# ---------------------------------------------------------------------
+# High Resolution 0.3 theme for K-Meleon by R.J.J. III				  
+# ---------------------------------------------------------------------
 
 This skin adds higher resolution icons to K-Meleon's default skin. It
 was written to provide insight into how K-Meleon's new skinning system
@@ -16,48 +14,60 @@ community especially John & siria for all their valuable insight.
 Scroll down for an outline of the skin's components and copyright info:
 
 
-  
-#######################################################################
-1.	Components
-#######################################################################
-	* skin.txt: This file is the source for the actual skin file. You
-				can convert it into a real config file by renaming it 
-				to "skin.cfg" but you should first remove the comments
-				because the actual config for the themeing system uses
-				the JSON format which does not include comments. The
-				comments won't have any impact on K-Meleon's toolbars
-				but they may cause glitches in menus.
-	* skin.cfg: This defines all the icons available to the the theme
-				from various .png files. It uses the JSON format. It
-				assigns icons to commands. All of the layout is done
-				by the toolbars.cfg file.
-	* toolbars.cfg: This creates the layouts for all the various tool-
-					bars and buttons. For KM75-style themes, K-Meleon
-					will first check for this config in the user's 
-					profile, then within the skin's folder, and then
-					in the browser's defaults/settings/ folder. If you
-					delete this file, the browser will simply use the 
-					default config. If you have a file like this in
-					your profile, K-Meleon will ignore it. And if you 
-					move this file to your profile it will define the
-					layout for both the High Resolution and Default
-					themes in the browser. Scroll down to the bottom
-					of this file for an example of how to add new menu
-					items to a KM75-style theme.
-	* readme.txt: Just contains information and copyright notices.
-	* graphical assets: You may notice that some icons are not present
-						in this theme. Because Default(HighResolution) 
-						is a variant of the "Default" theme, any assets
-						not present in this theme will be pulled from
-						the skins/Default/ folder.
+
+# ---------------------------------------------------------------------
+#	1.	Components
+# ---------------------------------------------------------------------
+	1.1. toolbars.cfg: This creates the layouts for all the various 
+		 toolbars and buttons. For KM75-style themes, K-Meleon will 
+		 first check for this config in the user's profile, then within
+		 the skin's folder, and then in the browser's
+		 defaults/settings/ folder. If you delete this file, K-Meleon
+		 will simply use the default config. If you have a toolbars.cfg
+		 in your profile, K-Meleon will ignore it. And if you move this
+		 file to your profile it will define the layout for this theme,
+		 K-Meleon "Default" theme, and other 75-style themes in your
+		 skins folder. Scroll down to the bottom of toobars.cfg for an 
+		 example of how to add new menu items in a 75-style theme.
+	1.2. skin.cfg: This defines all the icons available to the theme
+		 from various .png files. It uses the JSON format. It assigns 
+		 icons to commands. All of the layout is done by the 
+		 toolbars.cfg file. The icons will also be used in K-Meleon's 
+		 menus automatically.
+	1.3. skin.js: This file is optional and can cause errors. Most 
+         skins do not need this. Skin.js allows skins to set user 
+         preferences. These have the same syntax as prefs.js and user.js
+         from the user's profile folder. The user.js file will always 
+         override both skin.js and prefs.js. Setting preferences this
+         way to manage toolbars is therefore only consistent on a fresh
+         profile or before a user moves or toggles any toolbars.
+	1.4. graphical assets: All of the the other files in the skin's
+	     folder are graphical assets. The following grapical assets 
+	     are not defined by a config but by K-Meleon:
+	     back.bmp,      boomarks.bmp,   bookmarks-edit.ico, default.ico
+	     favorites.bmp, history.bmp,    history-view.ico,   hotlist.bmp
+	     hotlist-edit.ico,              loading.ico,        main.ico
+	     throbber.avi,  sbroken.ico,    sinsecur.ico,       ssecur.ico
+         Note: Except for back.bmp, K-Meleon will use the file from the
+               default theme if images defined by either K-Meleon or 
+               toolbars.cfg are not present in a theme.
+	1.4. skin.txt: Skin.cfg cannot contain comments. Skin.txt is the 
+		 source for skin.cfg. You can convert it into a real config
+		 file by renaming it to "skin.cfg" but you should first remove
+		 the comments. If comments are written as JSON, K-Meleon will
+		 start us and correctly render toolbars, but won't be able to 
+		 display the correct menu icons. Each comment should include
+		 a "//" on each line in order to easily remove them.
+			   
 
 
 
-#######################################################################
-2.	Copyright Information:
-#######################################################################
 
-The High Resolution 0.1 theme for K-Meleon was assembled by R.J.J. III,
+# ---------------------------------------------------------------------
+# 2.	Copyright Information:
+# ---------------------------------------------------------------------
+
+The High Resolution 0.3 theme for K-Meleon was assembled by R.J.J. III,
 Copyright © 2022. All original images were created for Phoenity Aura
 by Lim Chee Aun Copyright © 2015. Both the Phoenity Aura icons and this
 theme are made available under the Creative Commons Attribution-Share 
@@ -66,9 +76,9 @@ are listed below:
 
 
 
-#######################################################################
-2.1.	Attribution-ShareAlike 3.0 Unported:
-#######################################################################
+# ---------------------------------------------------------------------
+# 2.1.	Attribution-ShareAlike 3.0 Unported:
+# ---------------------------------------------------------------------
      CREATIVE COMMONS CORPORATION IS NOT A LAW FIRM AND DOES NOT PROVIDE LEGAL SERVICES. DISTRIBUTION OF THIS LICENSE DOES NOT CREATE AN ATTORNEY-CLIENT RELATIONSHIP. CREATIVE COMMONS PROVIDES THIS INFORMATION ON AN "AS-IS" BASIS. CREATIVE COMMONS MAKES NO WARRANTIES REGARDING THE INFORMATION PROVIDED, AND DISCLAIMS LIABILITY FOR DAMAGES RESULTING FROM ITS USE. 
 
 License
@@ -313,8 +323,3 @@ http://kmeleon.sourceforge.net/
 http://kmeleonbrowser.org/
 http://creativecommons.org/licenses/by-nc-sa/3.0/
 https://www.gnu.org/licenses/lgpl-3.0.html
-
-
-
-Light: 13 contrast, 13 lightness
-Fade: opacity to 150

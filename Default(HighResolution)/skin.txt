@@ -185,13 +185,14 @@
     
     {
       "images": [{
+			"width":"//This final section is where you can put your own custom icons for any command, macro, or Kplugin. There's no limit here on what you can give an icon or what size your icon can be. Don't create more sections after this though. K-Meleon only looks for and parses a certain number of sections and this should be the final one. If you need more icons for more commands, expand the width of your_icons.png and add to that image file.",
         "name": "your_icons.png",     
         "width":32,
         "height":32
       }], 
       "commands": [
-	  "macros(cfg_SettingsDir)",
-	  "ID_NAV_FORCE_RELOAD",
+		"macros(cfg_SettingsDir)",
+		"appRestart"
       ]
     }
   ]
